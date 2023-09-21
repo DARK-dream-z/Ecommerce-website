@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* Navigation Styles */
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* Active Navigation Link Styles */
+        .nav__link.active {
+            border-bottom: 2px solid #ff9900; /* Underline highlight effect with the website theme color */
+        }
+
+        nav a:hover {
+            color: #ff9900; /* Change the color on hover */
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Product Styles with 4-side orange border */
+        .product {
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid #ff9900; /* Orange border on all sides */
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product h4 {
+            margin-top: 10px;
+        }
+
+        .product p {
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 10px 0;
+        }
+
+        .responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+        /* New Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Footer Animation Effect */
+        footer a {
+            color: #ff9900;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Footer Social Icons */
+        .footer-social a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        /* Contact Us style */
+        .contact-container {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff8c42;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-header h1 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 150px; /* Adjust the height as needed */
+        }
+
+        .form-example {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .submit-button {
+            background-color: #ff5c26;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #ff6e3a;
+        }
+
+        /* Add style for the "valid" text */
+        .valid-email {
+            color: green;
+            font-size: 14px;
+        }
+
+        /* Add style for the error message */
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+          /* Style for the error message */
+    #error-message {
+        color: red; /* Text color */
+        font-size: 14px; /* Font size */
+        margin-top: 5px; /* Spacing from the top */
+    }
+   /* Create a flex container class */
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    background-color: #f0f0f0; /* Set background color for the first set */
+    padding: 10px; /* Add some spacing */
+}
+
+/* Alternate color for the second set */
+.alt-color {
+    background-color: #e0e0e0;
+}
+
+/* Alternate color for the third set */
+.alt-color-2 {
+    background-color: #d0d0d0;
+}
+
+/* Style for flex items */
+.flex-item {
+    flex: 1; /* Equal width for both columns */
+    padding: 10px; /* Add spacing around content */
+    border: 1px solid #ccc; /* Add a border for clarity */
+}
+
+/* Media query for screens below 650px */
+@media (max-width: 650px) {
+    .flex-container {
+        flex-direction: column; /* Stack items vertically */
+    }
+}
+    /* Add this CSS to create the initial and reverse animations */
+    .scroll-animation {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 2s ease, transform 2s ease;
+        }
+
+        .scroll-animation.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animation for img1 */
+        .img1.scroll-animation.animated {
+            animation: fadeInUpImg1 2s ease 0s 1 normal none running;
+        }
+
+        /* Animation for img2 */
+        .img2.scroll-animation.animated {
+            animation: slideInLeftImg2 2s ease 0s 1 normal none running;
+        }
+
+        /* Animation for img3 */
+        .img3.scroll-animation.animated {
+            animation: rotateInImg3 2s ease 0s 1 normal none running;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeInUpImg1 {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeftImg2 {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes rotateInImg3 {
+            from {
+                opacity: 0;
+                transform: rotate(-360deg);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0);
+            }
+        }
+
+/* Blog Styles */
+.blog {
+    margin: 80px auto; /* 40px top and bottom margin, centered horizontally */
+    max-width: 600px; /* Adjust the maximum width as needed */
+    text-align: left; /* Set the text alignment within the blog content */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Style for flex items */
+.flex-item {
+    flex: 1; /* Equal width for both columns */
+    padding: 10px; /* Add spacing around content */
+    /* Remove the border property */
+    border: none; /* Remove the border */
+}
+
+.patterned-line {
+  height: 50px; /* Adjust the height of your line */
+  background-image: linear-gradient(90deg, transparent 0%, transparent 40%, #007BFF 40%, #007BFF 60%, transparent 60%, transparent 100%);
+  background-size: 200% 100%; /* Control the width of the wave */
+  animation: wave 2s infinite linear; /* Adjust the animation duration */
+}
+
+@keyframes wave {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+
+
+    </style>
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Your Website Header</h1>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="/">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="/About Page/About.html">About Us</a></li>
+                <li class="nav__item"><a class="nav__link" href="/Products Page/Products.html">Products</a></li>
+                <li class="nav__item"><a class="nav__link" href="/Quality Assurance Page/Qualityassurance.html">Quality Assurance</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <!-- Main Content -->
+<main>
+    <img src="/img/About/story (1).jpg" alt="Image Description" class="responsive-image">
+    <h1>ITS ALL ABOUT US</h1>
+    <!-- First set of flex boxes -->
+    <div class="flex-container">
+        <div class="flex-item scroll-animation">
+            <img src="/img/About/content (1).jpg" alt="Image Description" class="responsive-image img1">
+
+        </div>
+        <div class="flex-item">
+            <!-- Blog for Content 2 -->
+            <div class="blog">
+                <h2>Introduction</h2>
+                <p>
+                    Welcome to [Your Company Name], a place where innovation meets passion,
+                     and dreams become reality. Behind every successful venture,
+                      there's a unique story, and we are thrilled to share ours with you today.
+                </p>
+                <p>
+                    Our "About Us" is not just a glimpse into our history, but an invitation 
+                    to get to know the people, values, and aspirations that drive our company 
+                    forward.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second set of flex boxes with a different color -->
+    <div class="flex-container alt-color">
+        <div class="flex-item">
+            <!-- Blog for Content 3 -->
+            <div class="blog">
+                <h2>Who We Are</h2>
+                <p>
+                    [Your Company Name] was founded with a clear purpose in mind: to make a 
+                    difference in the world. We are a team of diverse individuals, united by a
+                     shared vision of creating something exceptional.
+                </p>
+                <p>
+                 Our company is not just a business; it's a representation of our commitment to excellence, creativity, and integrity.
+                </p>
+            </div>
+        </div>
+        <div class="flex-item scroll-animation">
+            <img src="/img/About/content (2).jpg" alt="Image Description" class="responsive-image img2">
+        </div>
+    </div>
+
+    <!-- Third set of flex boxes with another different color -->
+    <div class="flex-container alt-color-2">
+        <div class="flex-item scroll-animation">
+            <img src="/img/About/content (3).png" alt="Image Description" class="responsive-image img3">
+    
+        </div>
+        <div class="flex-item">
+            <!-- Blog for Content 6 -->
+            <div class="blog">
+                <h2>Blog Title 6</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dolor ac justo tristique faucibus vel nec ipsum.
+                    Vestibulum in aliquam neque. Integer bibendum felis eu metus dictum, nec laoreet elit feugiat. Duis sed vehicula justo.
+                </p>
+                <p>
+                    Integer in dolor nec lorem feugiat pharetra. Suspendisse potenti. Sed interdum urna eget urna placerat, id luctus nulla cursus.
+                    Ut sit amet vestibulum nisi, non finibus nunc. In et metus non lectus facilisis dignissim.
+                </p>
+                <p>
+                    Nunc euismod nisl ac tortor varius, ac dictum quam feugiat. Vestibulum vestibulum, arcu nec varius lacinia, odio eros tincidunt
+                    sapien, ut malesuada est nunc vel metus. Proin ac sollicitudin libero. Vivamus vel interdum neque, non malesuada nunc.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+        <!-- Contact Us Design -->
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Contact Us</h1>
+            </div>
+            <div class="contact-form">
+                <div class="form-container">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required maxlength="20">
+                            <span class="form-example">(e.g., Your Name)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">Select a State</label>
+                            <select id="state" name="state" required>
+                                <option value="">Select</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                                <option value="Daman and Diu">Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Puducherry">Puducherry</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Select a City</label>
+                            <select id="city" name="city" required>
+                                <option value="">Select</option>
+                                <!-- City options will be populated dynamically based on the selected state -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Select a Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select</option>
+                                <option value="Distributor">Distributor</option>
+                                <option value="Franchise">Franchise</option>
+                                <option value="Complaint">Complaint</option>
+                                <option value="Feedback">Feedback</option>
+                                <option value="Report @office.use.only">Report @office.use.only</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message (up to 500 characters)</label>
+                            <textarea id="message" name="message" rows="6" required maxlength="500"></textarea>
+                        </div>
+                        <a href="#" id="submit-button" class="submit-button">Submit</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="error-message"> </div>
+       
+        <div class="patterned-line"></div>
+
+
+
+    </main>
+
+    <!-- New Footer Design -->
+    <footer>
+        <p>&copy; 2023 Your Website</p>
+        <div class="footer-social">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Youtube</a>
+            <a href="#" class="social-icon">Instagram</a>
+        </div>
+        <div class="footer-contact">
+            <p>Contact us at: contact@example.com</p>
+            <p>123 Main Street, City</p>
+        </div>
+    </footer>
+
+    <!-- Include the JavaScript file -->
+    <script src="/script.js"></script>
+    <script>
+        // Add an event listener to the state dropdown
+        const stateDropdown = document.getElementById('state');
+        const cityDropdown = document.getElementById('city');
+
+        // Define city options for each state in India
+        const cityOptions = {
+            'Andaman and Nicobar Islands': ['Port Blair'],
+            'Andhra Pradesh': ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Nellore', 'Kurnool', 'Kadapa', 'Rajahmundry'],
+            'Arunachal Pradesh': ['Itanagar', 'Naharlagun'],
+            'Assam': ['Guwahati', 'Silchar', 'Dibrugarh', 'Jorhat', 'Nagaon', 'Tinsukia'],
+            'Bihar': ['Patna', 'Gaya', 'Bhagalpur', 'Muzaffarpur', 'Purnia', 'Darbhanga'],
+            'Chandigarh': ['Chandigarh'],
+            'Chhattisgarh': ['Raipur', 'Bhilai', 'Durg', 'Bilaspur', 'Korba', 'Raigarh'],
+            'Dadra and Nagar Haveli': ['Silvassa'],
+            'Daman and Diu': ['Daman', 'Diu'],
+            'Delhi': ['New Delhi', 'Noida', 'Gurgaon', 'Faridabad', 'Ghaziabad'],
+            'Goa': ['Panaji', 'Vasco da Gama'],
+            'Gujarat': ['Ahmedabad', 'Surat', 'Vadodara', 'Rajkot', 'Bhavnagar', 'Jamnagar'],
+            'Haryana': ['Chandigarh', 'Faridabad', 'Gurgaon', 'Hisar', 'Panipat', 'Ambala'],
+            'Himachal Pradesh': ['Shimla', 'Mandi', 'Solan', 'Dharamshala', 'Kullu'],
+            'Jammu and Kashmir': ['Srinagar', 'Jammu', 'Anantnag', 'Baramulla', 'Udhampur'],
+            'Jharkhand': ['Ranchi', 'Jamshedpur', 'Dhanbad', 'Bokaro', 'Hazaribagh', 'Deoghar'],
+            'Karnataka': ['Bangalore', 'Mysore', 'Hubli', 'Mangalore', 'Belgaum', 'Gulbarga'],
+            'Kerala': ['Thiruvananthapuram', 'Kochi', 'Kozhikode', 'Kollam', 'Thrissur', 'Palakkad'],
+            'Lakshadweep': ['Kavaratti'],
+            'Madhya Pradesh': ['Bhopal', 'Indore', 'Jabalpur', 'Gwalior', 'Ujjain', 'Sagar'],
+            'Maharashtra': ['Mumbai', 'Pune', 'Nagpur', 'Thane', 'Nashik', 'Aurangabad'],
+            'Manipur': ['Imphal'],
+            'Meghalaya': ['Shillong'],
+            'Mizoram': ['Aizawl'],
+            'Nagaland': ['Kohima', 'Dimapur'],
+            'Odisha': ['Bhubaneswar', 'Cuttack', 'Rourkela', 'Sambalpur', 'Puri', 'Balasore'],
+            'Puducherry': ['Puducherry', 'Karaikal', 'Mahe', 'Yanam'],
+            'Punjab': ['Amritsar', 'Ludhiana', 'Jalandhar', 'Patiala', 'Bathinda', 'Hoshiarpur'],
+            'Rajasthan': ['Jaipur', 'Jodhpur', 'Udaipur', 'Kota', 'Ajmer', 'Bikaner'],
+            'Sikkim': ['Gangtok'],
+            'Tamil Nadu': ['Chennai', 'Coimbatore', 'Madurai', 'Trichy', 'Salem', 'Tirunelveli'],
+            'Telangana': ['Hyderabad', 'Warangal', 'Nizamabad', 'Karimnagar', 'Khammam', 'Ramagundam'],
+            'Tripura': ['Agartala'],
+            'Uttar Pradesh': ['Lucknow', 'Kanpur', 'Agra', 'Varanasi', 'Meerut', 'Prayagraj'],
+            'Uttarakhand': ['Dehradun', 'Haridwar', 'Roorkee', 'Haldwani', 'Kashipur'],
+            'West Bengal': ['Kolkata', 'Howrah', 'Durgapur', 'Asansol', 'Siliguri', 'Bardhaman'],
+        };
+
+        // Event listener for state dropdown change
+        stateDropdown.addEventListener('change', function () {
+            const selectedState = stateDropdown.value;
+            const cities = cityOptions[selectedState] || [];
+
+            // Clear existing city options
+            cityDropdown.innerHTML = '<option value="">Select</option>';
+
+            // Populate city dropdown with new options
+            cities.forEach(function (city) {
+                const option = document.createElement('option');
+                option.value = city;
+                option.textContent = city;
+                cityDropdown.appendChild(option);
+            });
+        });
+
+      // Add an event listener to the submit button
+    const submitButton = document.getElementById('submit-button');
+    submitButton.addEventListener('click', function (event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Get values from form fields
+        const name = document.getElementById('name').value.trim();
+        const state = document.getElementById('state').value.trim();
+        const city = document.getElementById('city').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Get the error message div
+        const errorDiv = document.getElementById('error-message');
+
+        // Check if any of the fields are empty
+        if (!name || !state || !city || !subject || !message) {
+            errorDiv.textContent = 'Please fill in all fields.';
+            return;
+        }
+
+        // Create the subject and body for the email
+        const mailtoSubject = `${subject}`;
+        const mailtoBody = `Name: ${name}\nState: ${state}\nCity: ${city}\nSubject: ${subject}\nMessage: ${message}`;
+
+        // Create the mailto link with your actual email address
+        const yourEmailAddress = 'contact@example.com'; // Replace with your actual email address
+        const mailtoLink = `mailto:${yourEmailAddress}?subject=${mailtoSubject}&body=${encodeURIComponent(mailtoBody)}`;
+
+        // Open the user's default email client with the mailto link
+        window.location.href = mailtoLink;
+
+        // Reset the form after submission
+        document.getElementById('contact-form').reset();
+
+        // Clear any previous error message
+        errorDiv.textContent = '';
+    });
+
+    // Function to check email validity using a simple regex
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    const scrollElements = document.querySelectorAll('.scroll-animation');
+
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5, // Trigger when at least 50% of the element is visible
+};
+
+const handleIntersect = (entries, observer) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+        } else {
+            entry.target.classList.remove('animated');
+        }
+    });
+};
+
+const observer = new IntersectionObserver(handleIntersect, options);
+
+scrollElements.forEach((el) => {
+    observer.observe(el);
+});
+
+// Function to check if an element is in the viewport
+function isElementInViewport(el, threshold) {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const elementHeight = rect.bottom - rect.top;
+    
+    // Calculate the threshold as a percentage of the element's height
+    const visibleThreshold = elementHeight * threshold;
+    
+    return (
+        rect.top >= -visibleThreshold &&
+        rect.left >= 0 &&
+        rect.bottom <= (windowHeight + visibleThreshold) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to handle scroll animations with reverse animation on exit
+function handleScrollAnimations(threshold) {
+    const elements = document.querySelectorAll('.scroll-animation');
+
+    elements.forEach((el) => {
+        if (isElementInViewport(el, threshold) && !el.classList.contains('animated')) {
+            el.classList.add('animated');
+        } else if (!isElementInViewport(el, threshold) && el.classList.contains('animated')) {
+            el.classList.remove('animated');
+        }
+    });
+}
+
+// Add an event listener for scroll events
+window.addEventListener('scroll', () => {
+    // Set the threshold to 0.3 (30%)
+    handleScrollAnimations(0.7);
+});
+
+// Initial check when the page loads
+handleScrollAnimations(0.1);
+
+
+    </script>
+</body>
+</html>

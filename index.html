@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" type="text/css" href="/index page/index.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Your Website Header</h1>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link active" href="/">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="/About Page/About.html">About Us</a></li>
+                <li class="nav__item"><a class="nav__link" href="/Products Page/Products.html">Products</a></li>
+                <li class="nav__item"><a class="nav__link" href="/Quality Assurance Page/Qualityassurance.html">Quality Assurance</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+         <!-- Carousel -->
+    <div class="carousel">
+        <img src="/img/index/story (1).jpg" alt="Story 1">
+        <div class="carousel-content">
+            <h2>Story 1 Title</h2>
+            <p>Story 1 Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+        <span class="carousel-indicator active" onclick="showSlide(0)"></span>
+        <span class="carousel-indicator" onclick="showSlide(1)"></span>
+        <span class="carousel-indicator" onclick="showSlide(2)"></span>
+        <span class="carousel-indicator" onclick="showSlide(3)"></span>
+    </div>
+
+      <div>
+         <h1>ITS YOUR HOME PAGE</h1>
+      </div>
+ <!-- Two-Column Flexbox Section -->
+ <div class="flexbox-section">
+    <div class="flexbox-item smaller-box"> <!-- First Box -->
+        <!-- Image -->
+        <img src="/img/index/1stblog - Copy.jpg" alt="Blog Image" class="hover-image">
+    </div>
+    <div class="flexbox-item larger-box"> <!-- Second Box -->
+        <!-- Blog Content -->
+        <h3>Blog Title</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        </p>
+        <p class="blog-paragraph">
+            Additional paragraph in the blog section.
+        </p>
+        <button class="blog-button">Read More</button>
+    </div>
+</div>
+
+<!-- Banner Section -->
+<div class="banner">
+    <!-- Add a div for the overlay -->
+    <div class="banner-overlay"></div>
+    
+    <!-- Add the image as a background for the overlay -->
+    <img src="/img/index/banner.jpg" alt="Banner Image" class="banner-image">
+    
+    <!-- Add the text "DREX" in the center -->
+    <div class="banner-text">DREX</div>
+</div>
+
+
+ <!-- Four-Column Flexbox Section -->
+ <div class="four-column-flexbox">
+    <div class="four-column-flex-item">
+        <img src="/img/index/feature (1).jpg" alt="Blog Image">
+        <h3>Column 1</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        </p>
+        <p class="blog-paragraph">
+            Additional paragraph in the blog section.
+        </p>
+        <button class="blog-button">Read More</button>
+    </div>
+    <div class="four-column-flex-item">
+        <img src="/img/index/feature (2).jpg" alt="Blog Image">
+        <h3>Column 2</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        </p>
+        <p class="blog-paragraph">
+            Additional paragraph in the blog section.
+        </p>
+        <button class="blog-button">Read More</button>
+    </div>
+    <div class="four-column-flex-item">
+        <img src="/img/index/feature (3).jpg" alt="Blog Image">
+        <h3>Column 3</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        </p>
+        <p class="blog-paragraph">
+            Additional paragraph in the blog section.
+        </p>
+        <button class="blog-button">Read More</button>
+    </div>
+    <div class="four-column-flex-item">
+        <img src="/img/index/feature (4).jpg" alt="Blog Image">
+        <h3>Column 4</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        </p>
+        <p class="blog-paragraph">
+            Additional paragraph in the blog section.
+        </p>
+        <button class="blog-button">Read More</button>
+    </div>
+</div>
+
+ <!-- Two-Column Flexbox Section -->
+ <div class="flexbox-section">
+    <div class="flexbox-item smaller-box"> <!-- First Box -->
+        <!-- Image -->
+        <img src="/img/index/1stblog.jpg" alt="Blog Image" class="hover-image">
+    </div>
+    <div class="flexbox-item larger-box"> <!-- Second Box -->
+        <!-- Blog Content -->
+        <h3>About Us</h3>
+        <p>
+            "We're not just a company; we're a passionate collective of visionaries, 
+             dedicated to redefining excellence. With innovation at our core,
+        </p>
+        <p class="blog-paragraph">
+            we embark on a journey to exceed your expectations. Our commitment? 
+            Delivering brilliance, every step of the way. Join us in our pursuit of greatness!"
+        </p>
+        <br>
+        <a href="/About Page/About.html" class="blog-button">Read More</button></a>
+    </div>
+</div>
+
+    <hr>
+
+        <!-- The button linked to the Contact Us section on About us page -->
+        <div id="contact-button">
+            <a href="/About%20Page/About.html#contact-form" class="button">BECOME A PARTNER</a>
+        </div>
+        
+
+    </main>
+
+    <!-- New Footer Design -->
+    <footer>
+        <p>&copy; 2023 Your Website</p>
+        <div class="footer-social">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Youtube</a>
+            <a href="#" class="social-icon">Instagram</a>
+        </div>
+        <div class="footer-contact">
+            <p>Contact us at: contact@example.com</p>
+            <p>123 Main Street, City</p>
+        </div>
+    </footer>
+       <!-- Include the JavaScript file -->
+       <script src="/script.js"></script>
+       <script src="/index page/index.js"></script>
+</body>
+</html>

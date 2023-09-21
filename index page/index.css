@@ -1,0 +1,336 @@
+ /* Reset some default styles */
+ body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add some basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Active Navigation Link Styles */
+.nav__link.active {
+    border-bottom: 2px solid #ff9900; /* Underline highlight effect with the website theme color */
+}
+
+nav a:hover {
+    color: #ff9900; /* Change the color on hover */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+/* Carousel Content Styles with 0% transparency */
+.carousel-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0); /* Updated opacity to 0.9 for 90% transparency */
+    color: #fff;
+    padding: 20px;
+}
+
+.carousel-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.carousel-content p {
+    font-size: 14px;
+}
+
+/* Carousel Indicator Styles */
+.carousel-indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #666;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel-indicator.active {
+    background-color: #ff9900;
+}
+
+/* Flexbox Section Styles */
+.flexbox-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Flex Items Styles */
+.flexbox-item {
+    flex: 1;
+    padding: 20px;
+    color: #000;
+}
+
+/* Size and Color Styles for Each Box */
+.smaller-box {
+    /* Removed background-color */
+    flex-basis: 30%; /* Adjust the size as needed */
+}
+
+.larger-box {
+    /* Removed background-color */
+    flex-basis: 60%; /* Adjust the size as needed */
+}
+
+/* Responsive Styling for Smaller Screens */
+@media screen and (max-width: 650px) {
+    .flexbox-section {
+        flex-direction: column; /* Stack flex items vertically */
+    }
+
+    /* Reset the size and width for each box */
+    .flexbox-item {
+        flex-basis: auto;
+        width: 100%;
+    }
+}
+
+/* Image Styles */
+.hover-image {
+    max-width: 123px;
+    max-height: 168px;
+    width: 100%;
+    height: auto;
+    display: block; /* Center the image horizontally */
+    margin: 0 auto; /* Center the image horizontally */
+    transition: transform 0.3s; /* Apply a smooth transition on hover */
+}
+
+/* Scale up the image when the flexbox appears vertically */
+@media screen and (max-width: 650px) {
+    .flexbox-section .hover-image {
+        max-width: 147.6px; /* 123px * 1.2 for 120% upscale */
+        max-height: 201.6px; /* 168px * 1.2 for 120% upscale */
+    }
+}
+
+/* Blog Button Styles */
+.blog-button {
+    margin-top: 10px;
+    background-color: #ff9900;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.blog-button:hover {
+    background-color: #ff6600;
+}
+
+/* Banner Styles */
+.banner {
+    text-align: center;
+    margin-top: 20px;
+    position: relative; /* Add this to position child elements */
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text horizontally and vertically */
+    color: #fff; /* Text color */
+    font-size: 36px; /* Adjust the font size as needed */
+}
+
+/* Four-Column Flexbox Section Styles */
+.four-column-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Flex Items Styles for Four-Column Flexbox */
+.four-column-flex-item {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Decrease the size of the image by 40% while maintaining aspect ratio */
+.four-column-flex-item img {
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Add hover effect to scale up the item and add a box shadow */
+.four-column-flex-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styling for Smaller Screens for Four-Column Flexbox */
+@media screen and (max-width: 650px) {
+    .four-column-flexbox {
+        flex-direction: column;
+    }
+    .four-column-flex-item {
+        flex-basis: auto;
+        width: 100%;
+    }
+}
+
+
+/* Contact Us Button style */
+#contact-button {
+    margin-top: 20px; /* Adjust the value as needed */
+}
+
+.button {
+    margin-top: 20px;
+    background-color: #ff9900;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Add box-shadow to the transition */
+    text-decoration: none;
+    animation: blink 490ms infinite alternate; /* Add the animation property */
+}
+
+@keyframes blink {
+    0% {
+        background-color: #ff990000;
+    }
+    50% {
+        background-color: #ff9900;
+    }
+    100% {
+        background-color: #ff9900;
+    }
+}
+
+.button a {
+    text-decoration: none; /* Hide the underline for the anchor element */
+    color: #fff; /* Set the text color for the anchor element */
+}
+
+.button:hover {
+    background-color: #ff6600;
+    box-shadow: 0 0 10px #ff6600; /* Add a box-shadow on hover */
+    animation: borderAnimation 1s infinite alternate; /* Add the animation */
+}
+
+
+/* New Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Footer Animation Effect */
+footer a {
+    color: #ff9900;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Footer Social Icons */
+.footer-social a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 18px;
+}
+

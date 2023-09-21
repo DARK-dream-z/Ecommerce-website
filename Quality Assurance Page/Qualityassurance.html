@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* Navigation Styles */
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* Active Navigation Link Styles */
+        .nav__link.active {
+            border-bottom: 2px solid #ff9900; /* Underline highlight effect with the website theme color */
+        }
+
+        nav a:hover {
+            color: #ff9900; /* Change the color on hover */
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 20px;
+            display: flex; /* Use flexbox for a 2-column layout */
+            justify-content: space-between; /* Space columns evenly */
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        /* Left Column for Image */
+        .left-column {
+            flex: 1; /* Take up equal space in the flex container */
+            text-align: right; /* Right-align content */
+            padding-right: 20px; /* Add some spacing to the right */
+        }
+
+        /* Right Column for Blog */
+        .right-column {
+            flex: 1; /* Take up equal space in the flex container */
+            text-align: left; /* Left-align content */
+            padding-left: 20px; /* Add some spacing to the left */
+            margin-top: 120px;
+        }
+
+        /* Product Styles with 4-side orange border */
+        .product {
+            margin: 20px 0;
+            padding: 10px;
+           /*  border: 2px solid #ff9900; Orange border on all sides 
+            background-color: #f9f9f9;*/
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Remove extra space below image */
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+        .product h4 {
+            margin-top: 10px;
+        }
+
+        .product p {
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 10px 0;
+        }
+
+        /* New Footer Design */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Footer Animation Effect */
+        footer a {
+            color: #ff9900;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Footer Social Icons */
+        .footer-social a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        /* Define the orange color theme */
+        :root {
+            --primary-color: #000000; /* Orange */
+        }
+
+        /* Apply the orange color theme to various elements */
+        .text-gray-600 {
+            color: var(--primary-color);
+        }
+
+        .bg-indigo-100 {
+            background-color: var(--primary-color);
+        }
+
+        .text-indigo-500 {
+            color: var(--primary-color);
+        }
+
+        /* Add any additional styles you want here */
+
+        /* Example styles for the "Learn More" links */
+        .text-indigo-500:hover {
+            color: #fff; /* Change color on hover */
+            background-color: var(--primary-color); /* Change background color on hover */
+            text-decoration: none; /* Remove underline on hover */
+        }
+        /* Media Query for screens below 800px */
+        @media (max-width: 800px) {
+            main {
+                flex-direction: column; /* Change to a vertical layout */
+                align-items: center; /* Center-align items */
+            }
+
+            .left-column {
+                text-align: center; /* Center-align content */
+                padding-right: 0; /* Remove right padding */
+                margin-top: 20px; /* Adjust top margin */
+            }
+
+            .right-column {
+                text-align: center; /* Center-align content */
+                padding-left: 0; /* Remove left padding */
+                margin-top: 20px; /* Adjust top margin */
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+   <!-- Header Section -->
+   <header>
+    <h1>Your Website Header</h1>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link" href="/">Home</a></li>
+            <li class="nav__item"><a class="nav__link" href="/About Page/About.html">About Us</a></li>
+            <li class="nav__item"><a class="nav__link" href="/Products Page/Products.html">Products</a></li>
+            <li class="nav__item"><a class="nav__link" href="/Quality Assurance Page/Qualityassurance.html">Quality Assurance</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main>
+    <!-- Left Column for Image -->
+    <div class="left-column">
+        <div class="product">
+            <img alt="feature" src="/img/Quality/460x500gg.jpg">
+        </div>
+    </div>
+
+    <!-- Right Column for Blog -->
+    <div class="right-column">
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto">
+                <h1>HERE YOU WILL GET BEST Quality</h1>
+                <p>This is a blog about our high-quality products and services. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut erat ac massa aliquet sagittis in sed ligula. Fusce ac rhoncus metus. Sed vitae fringilla justo. Quisque eget feugiat neque. Aliquam erat volutpat.</p>
+                <p>Phasellus bibendum ex vitae ultricies. Duis sit amet varius ex. Integer eget diam et justo dictum volutpat. Vivamus vitae malesuada nunc. Donec scelerisque eros ut justo dapibus, in suscipit mi efficitur.</p>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- New Footer Design -->
+<footer>
+    <p>&copy; 2023 Your Website</p>
+    <div class="footer-social">
+        <a href="#" class="social-icon">Facebook</a>
+        <a href="#" class="social-icon">Youtube</a>
+        <a href="#" class="social-icon">Instagram</a>
+    </div>
+    <div class="footer-contact">
+        <p>Contact us at: contact@example.com</p>
+        <p>123 Main Street, City</p>
+    </div>
+    </div>
+</footer>
+<script src="/script.js"></script>
+</body>
+</html>

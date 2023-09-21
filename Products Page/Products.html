@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+         /* Reset some default styles */
+         body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* Navigation Styles */
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        /* Active Navigation Link Styles */
+        .nav__link.active {
+            border-bottom: 2px solid #ff9900; /* Underline highlight effect with the website theme color */
+        }
+
+        nav a:hover {
+            color: #ff9900; /* Change the color on hover */
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Product Styles with 4-side orange border */
+        .product {
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid #ff9900; /* Orange border on all sides */
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product h4 {
+            margin-top: 10px;
+        }
+
+        .product p {
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 10px 0;
+        }
+
+        /* New Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Footer Animation Effect */
+        footer a {
+            color: #ff9900;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Footer Social Icons */
+        .footer-social a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        .product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+/* Your CSS styles here */
+
+/* Horizontal display for the category list */
+.categories ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.categories li {
+    margin-right: 20px; /* Adjust the spacing between categories */
+    cursor: pointer;
+    position: relative;
+}
+
+/* Center-align products and make them horizontal */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust the spacing between products */
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* Add this CSS to underline the active category */
+.categories li.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background-color: #ff9900; /* Underline color */
+}
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Your Website Header</h1>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="/">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="/About Page/About.html">About Us</a></li>
+                <li class="nav__item"><a class="nav__link" href="/Products Page/Products.html">Products</a></li>
+                <li class="nav__item"><a class="nav__link" href="/Quality Assurance Page/Qualityassurance.html">Quality Assurance</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <H1>ITS PRODUCTS PAGE</H1>
+
+
+        <nav class="categories">
+            <h2></h2>
+            <ul>
+                <li data-category="all">All Products</li>
+                <li data-category="category1">Category 1</li>
+                <li data-category="category2">Category 2</li>
+                <li data-category="category3">Category 3</li>
+                <li data-category="category4">Category 4</li>
+            </ul>
+        </nav>
+        <section class="products">
+            <!-- Product items will be dynamically generated here -->
+        </section>
+
+    </main>
+
+    <!-- New Footer Design -->
+    <footer>
+        <p>&copy; 2023 Your Website</p>
+        <div class="footer-social">
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Youtube</a>
+            <a href="#" class="social-icon">Instagram</a>
+        </div>
+        <div class="footer-contact">
+            <p>Contact us at: contact@example.com</p>
+            <p>123 Main Street, City</p>
+        </div>
+    </footer>
+       <!-- Include the JavaScript file -->
+       <script src="/script.js"></script>
+       <script>document.addEventListener("DOMContentLoaded", function () {
+        const categoriesList = document.querySelector(".categories ul");
+        const productsSection = document.querySelector(".products");
+    
+        // Sample product data (you can replace this with your actual data)
+        const productsData = [
+            {
+                name: "Product 1",
+                category: "category1",
+                price: "$19.99",
+                image: "/img/Products/product (1).jpg",
+            },
+            {
+                name: "Product 2",
+                category: "category1",
+                price: "$19.99",
+                image: "/img/Products/product (2).jpg",
+            },
+            {
+                name: "Product 3",
+                category: "category1",
+                price: "$19.99",
+                image: "/img/Products/product (3).jpg",
+            },
+            {
+                name: "Product 4",
+                category: "category1",
+                price: "$19.99",
+                image: "/img/Products/product (4).jpg",
+            },
+            {
+                name: "Product 1",
+                category: "category2",
+                price: "$24.99",
+                image: "/img/Products/product (5).jpg",
+            },
+            {
+                name: "Product 2",
+                category: "category2",
+                price: "$24.99",
+                image: "/img/Products/product (6).jpg",
+            },
+            {
+                name: "Product 3",
+                category: "category2",
+                price: "$24.99",
+                image: "/img/Products/product (7).jpg",
+            },
+            {
+                name: "Product 4",
+                category: "category2",
+                price: "$24.99",
+                image: "/img/Products/product (8).jpg",
+            },
+
+            {
+                name: "Product 1",
+                category: "category3",
+                price: "$24.99",
+                image: "/img/Products/product (9).jpg",
+            },
+            {
+                name: "Product 2",
+                category: "category3",
+                price: "$24.99",
+                image: "/img/Products/product (10).jpg",
+            },
+            {
+                name: "Product 3",
+                category: "category3",
+                price: "$24.99",
+                image: "/img/Products/product (11).jpg",
+            },
+            {
+                name: "Product 1",
+                category: "category4",
+                price: "$24.99",
+                image: "/img/Products/product (12).jpg",
+            },
+            {
+                name: "Product 2",
+                category: "category4",
+                price: "$24.99",
+                image: "/img/Products/product (13).jpg",
+            },
+          
+            // Add more products with categories as needed
+        ];
+    
+        // Function to generate product items
+        function generateProductItems(category) {
+            productsSection.innerHTML = "";
+    
+            if (category === "all") {
+                // Display all products
+                productsData.forEach((product) => {
+                    createProductItem(product);
+                });
+            } else {
+                // Display products based on the selected category
+                const filteredProducts = productsData.filter(
+                    (product) => product.category === category
+                );
+                filteredProducts.forEach((product) => {
+                    createProductItem(product);
+                });
+            }
+        }
+    
+        // Function to create a product item
+        function createProductItem(product) {
+            const productItem = document.createElement("div");
+            productItem.classList.add("product");
+            productItem.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <h2>${product.name}</h2>
+                <p>Price: ${product.price}</p>
+                <button>Add to Cart</button>
+            `;
+            productsSection.appendChild(productItem);
+        }
+    
+        // Event listener for category selection
+    categoriesList.addEventListener("click", (event) => {
+        if (event.target.tagName === "LI") {
+            const selectedCategory = event.target.getAttribute("data-category");
+            generateProductItems(selectedCategory);
+
+            // Remove active class from all categories
+            const categoryItems = document.querySelectorAll(".categories li");
+            categoryItems.forEach((item) => {
+                item.classList.remove("active");
+            });
+
+            // Add active class to the clicked category
+            event.target.classList.add("active");
+        }
+    });
+
+    // Initial display of all products
+    generateProductItems("all");
+});
+    </script>
+</body>
+</html>
